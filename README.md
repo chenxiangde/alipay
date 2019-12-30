@@ -114,7 +114,7 @@ Support Function：
 
 ```java
 public class AppPay {
-  	public String appPay(String subject, String outTradeNo, String totalAmount) throws AlipayApiException {
+  	public String appPay() throws AlipayApiException {
   		return PayRootChainFactory
   				.createdPayChain("appId", "privateKey", "publicKey")
   				.appPay("subject", "outTradeNo", "totalAmount")
