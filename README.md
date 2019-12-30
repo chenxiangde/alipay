@@ -142,7 +142,7 @@ public class WapPay {
 
 ```java
 public class PagePay {
-	public String pagePay(String returnUrl, String notifyUrl) throws AlipayApiException {
+	public String pagePay() throws AlipayApiException {
 		return PayRootChainFactory
 				.createdPayChain("appId","privateKey","publicKey")
 				.pagePay("subject","outTradeNo","totalAmount")

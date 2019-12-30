@@ -295,7 +295,7 @@ public class PagePayParamChain {
 	 * 注,与DisablePayChannels互斥
 	 * 渠道列表:https://docs.open.alipay.com/common/wifww7
 	 *
-	 * @param enablePayChannels
+	 * @param enablePayChannels enablePayChannels
 	 * @return PagePayParamChain
 	 */
 	public PagePayParamChain builderEnablePayChannels(String enablePayChannels) {
