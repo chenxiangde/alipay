@@ -53,7 +53,7 @@ public class AppPayChain {
 		AlipayTradeAppPayRequest payRequest = new AlipayTradeAppPayRequest();
 		payRequest.setNotifyUrl(notifyUrl);
 		payRequest.setBizModel(alipayTradeAppPayModel);
-		return alipayClient.execute(payRequest).getBody();
+		return alipayClient.sdkExecute(payRequest).getBody();
 	}
 
 	/**
@@ -67,6 +67,6 @@ public class AppPayChain {
 	 */
 	public String pay(AlipayTradeAppPayRequest payRequest) throws AlipayApiException {
 		payRequest.setBizModel(alipayTradeAppPayModel);
-		return alipayClient.execute(payRequest).getBody();
+		return alipayClient.sdkExecute(payRequest).getBody();
 	}
 }
