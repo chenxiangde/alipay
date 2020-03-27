@@ -32,38 +32,38 @@ import lombok.Data;
  */
 @Data
 public class PayQueryChain {
-	private AlipayClient alipayClient;
-	private AlipayTradeQueryModel alipayTradeQueryModel;
+    private AlipayClient alipayClient;
+    private AlipayTradeQueryModel alipayTradeQueryModel;
 
-	public PayQueryChain(AlipayClient alipayClient, AlipayTradeQueryModel alipayTradeQueryModel) {
-		this.alipayClient = alipayClient;
-		this.alipayTradeQueryModel = alipayTradeQueryModel;
-	}
+    public PayQueryChain(AlipayClient alipayClient, AlipayTradeQueryModel alipayTradeQueryModel) {
+        this.alipayClient = alipayClient;
+        this.alipayTradeQueryModel = alipayTradeQueryModel;
+    }
 
-	/**
-	 * Building Query
-	 * <p>
-	 * 构建查询
-	 *
-	 * @return String
-	 * @throws AlipayApiException AlipayApiException
-	 */
-	public String query() throws AlipayApiException {
-		AlipayTradeQueryRequest queryRequest = new AlipayTradeQueryRequest();
-		queryRequest.setBizModel(alipayTradeQueryModel);
-		return alipayClient.execute(queryRequest).getBody();
-	}
+    /**
+     * Building Query
+     * <p>
+     * 构建查询
+     *
+     * @return String
+     * @throws AlipayApiException AlipayApiException
+     */
+    public String query() throws AlipayApiException {
+        AlipayTradeQueryRequest queryRequest = new AlipayTradeQueryRequest ();
+        queryRequest.setBizModel (alipayTradeQueryModel);
+        return alipayClient.execute (queryRequest).getBody ();
+    }
 
-	/**
-	 * Custom Build QueryRequest
-	 * <p>
-	 * 自定义构建QueryRequest
-	 *
-	 * @param queryRequest queryRequest
-	 * @return String
-	 * @throws AlipayApiException AlipayApiException
-	 */
-	public String query(AlipayTradeQueryRequest queryRequest) throws AlipayApiException {
-		return alipayClient.execute(queryRequest).getBody();
-	}
+    /**
+     * Custom Build QueryRequest
+     * <p>
+     * 自定义构建QueryRequest
+     *
+     * @param queryRequest queryRequest
+     * @return String
+     * @throws AlipayApiException AlipayApiException
+     */
+    public String query(AlipayTradeQueryRequest queryRequest) throws AlipayApiException {
+        return alipayClient.execute (queryRequest).getBody ();
+    }
 }

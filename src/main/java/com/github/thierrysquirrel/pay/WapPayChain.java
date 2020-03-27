@@ -32,45 +32,45 @@ import lombok.Data;
  */
 @Data
 public class WapPayChain {
-	private AlipayClient alipayClient;
-	private AlipayTradeWapPayModel alipayTradeWapPayModel;
+    private AlipayClient alipayClient;
+    private AlipayTradeWapPayModel alipayTradeWapPayModel;
 
-	public WapPayChain(AlipayClient alipayClient, AlipayTradeWapPayModel alipayTradeWapPayModel) {
-		this.alipayClient = alipayClient;
-		this.alipayTradeWapPayModel = alipayTradeWapPayModel;
-	}
+    public WapPayChain(AlipayClient alipayClient, AlipayTradeWapPayModel alipayTradeWapPayModel) {
+        this.alipayClient = alipayClient;
+        this.alipayTradeWapPayModel = alipayTradeWapPayModel;
+    }
 
-	/**
-	 * Generate Forms
-	 * <p>
-	 * 生成表单
-	 *
-	 * @param returnUrl After the transaction is completed, the page will take the initiative to jump to the HTTP / HTTPS path specified in the merchant server
-	 *                  交易完成后页面主动跳转,商户服务器里指定的页面http/https路径
-	 * @param notifyUrl AliPay Server Initiatively Tells The Http/Https Path Specified In The Merchant Server.
-	 *                  支付宝服务器主动通知商户服务器里指定的页面http/https路径
-	 * @return String
-	 * @throws AlipayApiException AlipayApiException
-	 */
-	public String pay(String returnUrl, String notifyUrl) throws AlipayApiException {
-		AlipayTradeWapPayRequest payRequest = new AlipayTradeWapPayRequest();
-		payRequest.setReturnUrl(returnUrl);
-		payRequest.setNotifyUrl(notifyUrl);
-		payRequest.setBizModel(alipayTradeWapPayModel);
-		return alipayClient.pageExecute(payRequest).getBody();
-	}
+    /**
+     * Generate Forms
+     * <p>
+     * 生成表单
+     *
+     * @param returnUrl After the transaction is completed, the page will take the initiative to jump to the HTTP / HTTPS path specified in the merchant server
+     *                  交易完成后页面主动跳转,商户服务器里指定的页面http/https路径
+     * @param notifyUrl AliPay Server Initiatively Tells The Http/Https Path Specified In The Merchant Server.
+     *                  支付宝服务器主动通知商户服务器里指定的页面http/https路径
+     * @return String
+     * @throws AlipayApiException AlipayApiException
+     */
+    public String pay(String returnUrl, String notifyUrl) throws AlipayApiException {
+        AlipayTradeWapPayRequest payRequest = new AlipayTradeWapPayRequest ();
+        payRequest.setReturnUrl (returnUrl);
+        payRequest.setNotifyUrl (notifyUrl);
+        payRequest.setBizModel (alipayTradeWapPayModel);
+        return alipayClient.pageExecute (payRequest).getBody ();
+    }
 
-	/**
-	 * Custom Build PayRequest
-	 * <p>
-	 * 自定义构建PayRequest
-	 *
-	 * @param payRequest payRequest
-	 * @return String
-	 * @throws AlipayApiException AlipayApiException
-	 */
-	public String pay(AlipayTradeWapPayRequest payRequest) throws AlipayApiException {
-		payRequest.setBizModel(alipayTradeWapPayModel);
-		return alipayClient.pageExecute(payRequest).getBody();
-	}
+    /**
+     * Custom Build PayRequest
+     * <p>
+     * 自定义构建PayRequest
+     *
+     * @param payRequest payRequest
+     * @return String
+     * @throws AlipayApiException AlipayApiException
+     */
+    public String pay(AlipayTradeWapPayRequest payRequest) throws AlipayApiException {
+        payRequest.setBizModel (alipayTradeWapPayModel);
+        return alipayClient.pageExecute (payRequest).getBody ();
+    }
 }

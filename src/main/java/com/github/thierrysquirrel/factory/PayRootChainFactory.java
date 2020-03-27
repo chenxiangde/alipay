@@ -31,55 +31,55 @@ import com.github.thierrysquirrel.pay.DefaultPayChain;
  */
 public class PayRootChainFactory {
 
-	/**
-	 * Create Online Environment Pay Chain For, Default Parameters, See
-	 * {@linkplain com.github.thierrysquirrel.container.PayClientConstant PayClientConstant}
-	 * <p>
-	 * 创建线上环境支付链,默认参数请参见
-	 * {@linkplain com.github.thierrysquirrel.container.PayClientConstant PayClientConstant}
-	 *
-	 * @param appId      Application ID allocated to developers by AliPay
-	 *                   支付宝分配给开发者的应用ID
-	 * @param privateKey privateKey
-	 *                   应用私钥
-	 * @param publicKey  publicKey
-	 *                   支付宝公钥
-	 * @return DefaultPayChain
-	 */
-	public static DefaultPayChain createdPayChain(String appId, String privateKey, String publicKey) {
-		return new DefaultPayChain(new DefaultAlipayClient(PayClientConstant.PAY_GATEWAY.getValue(), appId, privateKey, PayClientConstant.PAY_FORMAT.getValue(), PayClientConstant.PAY_CHARSET.getValue(), publicKey, PayClientConstant.PAY_SIGN_TYPE.getValue()));
-	}
+    /**
+     * Create Online Environment Pay Chain For, Default Parameters, See
+     * {@linkplain com.github.thierrysquirrel.container.PayClientConstant PayClientConstant}
+     * <p>
+     * 创建线上环境支付链,默认参数请参见
+     * {@linkplain com.github.thierrysquirrel.container.PayClientConstant PayClientConstant}
+     *
+     * @param appId      Application ID allocated to developers by AliPay
+     *                   支付宝分配给开发者的应用ID
+     * @param privateKey privateKey
+     *                   应用私钥
+     * @param publicKey  publicKey
+     *                   支付宝公钥
+     * @return DefaultPayChain
+     */
+    public static DefaultPayChain createdPayChain(String appId, String privateKey, String publicKey) {
+        return new DefaultPayChain (new DefaultAlipayClient (PayClientConstant.PAY_GATEWAY.getValue (), appId, privateKey, PayClientConstant.PAY_FORMAT.getValue (), PayClientConstant.PAY_CHARSET.getValue (), publicKey, PayClientConstant.PAY_SIGN_TYPE.getValue ()));
+    }
 
-	/**
-	 * Create Sandbox Environment Pay Chain For, Default Parameters, See
-	 * {@linkplain com.github.thierrysquirrel.container.PayClientConstant PayClientConstant}
-	 * <p>
-	 * 创建沙箱环境支付链,默认参数请参见
-	 * {@linkplain com.github.thierrysquirrel.container.PayClientConstant PayClientConstant}
-	 *
-	 * @param appId      Application ID allocated to developers by AliPay
-	 *                   支付宝分配给开发者的应用ID
-	 * @param privateKey privateKey
-	 *                   应用私钥
-	 * @param publicKey  publicKey
-	 *                   支付宝公钥
-	 * @return DefaultPayChain
-	 */
-	public static DefaultPayChain createdDevPayChain(String appId, String privateKey, String publicKey) {
-		return new DefaultPayChain(new DefaultAlipayClient(PayClientConstant.DEV_PAY_GATEWAY.getValue(), appId, privateKey, PayClientConstant.PAY_FORMAT.getValue(), PayClientConstant.PAY_CHARSET.getValue(), publicKey, PayClientConstant.PAY_SIGN_TYPE.getValue()));
-	}
+    /**
+     * Create Sandbox Environment Pay Chain For, Default Parameters, See
+     * {@linkplain com.github.thierrysquirrel.container.PayClientConstant PayClientConstant}
+     * <p>
+     * 创建沙箱环境支付链,默认参数请参见
+     * {@linkplain com.github.thierrysquirrel.container.PayClientConstant PayClientConstant}
+     *
+     * @param appId      Application ID allocated to developers by AliPay
+     *                   支付宝分配给开发者的应用ID
+     * @param privateKey privateKey
+     *                   应用私钥
+     * @param publicKey  publicKey
+     *                   支付宝公钥
+     * @return DefaultPayChain
+     */
+    public static DefaultPayChain createdDevPayChain(String appId, String privateKey, String publicKey) {
+        return new DefaultPayChain (new DefaultAlipayClient (PayClientConstant.DEV_PAY_GATEWAY.getValue (), appId, privateKey, PayClientConstant.PAY_FORMAT.getValue (), PayClientConstant.PAY_CHARSET.getValue (), publicKey, PayClientConstant.PAY_SIGN_TYPE.getValue ()));
+    }
 
-	/**
-	 * Create A Custom Payment Chain Suggested Use
-	 * {@linkplain com.alipay.api.DefaultAlipayClient DefaultAlipayClient}
-	 * <p>
-	 * 创建自定义支付链,建议使用
-	 * {@linkplain com.alipay.api.DefaultAlipayClient DefaultAlipayClient}
-	 *
-	 * @param payClient payClient
-	 * @return DefaultPayChain
-	 */
-	public static DefaultPayChain createdPayChain(AlipayClient payClient) {
-		return new DefaultPayChain(payClient);
-	}
+    /**
+     * Create A Custom Payment Chain Suggested Use
+     * {@linkplain com.alipay.api.DefaultAlipayClient DefaultAlipayClient}
+     * <p>
+     * 创建自定义支付链,建议使用
+     * {@linkplain com.alipay.api.DefaultAlipayClient DefaultAlipayClient}
+     *
+     * @param payClient payClient
+     * @return DefaultPayChain
+     */
+    public static DefaultPayChain createdPayChain(AlipayClient payClient) {
+        return new DefaultPayChain (payClient);
+    }
 }

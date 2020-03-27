@@ -25,37 +25,37 @@ package com.github.thierrysquirrel.container;
  * @since JDK 1.8
  */
 public enum PayParamConstant {
-	/**
-	 * Product Code, Product Code Signed By AliPay And Merchants,
-	 * Fixed Value QUICK_MSECURITY_PAY
-	 * <p>
-	 * 销售产品码，商家和支付宝签约的产品码,
-	 * 为固定值 QUICK_MSECURITY_PAY
-	 */
-	APP_PAY_PARAM_PRODUCT_CODE("QUICK_MSECURITY_PAY"),
-	/**
-	 * Product Code, The Product Code Signed By AliPay And Merchants.
-	 * Please Fill In The Fixed Value Of The Product: QUICK_WAP_WAY
-	 * <p>
-	 * 销售产品码，商家和支付宝签约的产品码.
-	 * 该产品请填写固定值：QUICK_WAP_WAY
-	 */
-	WAP_PAY_PARAM_PRODUCT_CODE("QUICK_WAP_WAY"),
-	/**
-	 * Sell Product Code, Name Of Product Code Signed With AliPay.
-	 * Note: Currently Only Supported:FAST_INSTANT_TRADE_PAY
-	 * <p>
-	 * 销售产品码，与支付宝签约的产品码名称.
-	 * 注：目前仅支持FAST_INSTANT_TRADE_PAY
-	 */
-	PAGE_PAT_PARAM_PRODUCT_CODE("FAST_INSTANT_TRADE_PAY");
-	private String value;
+    /**
+     * Product Code, Product Code Signed By AliPay And Merchants,
+     * Fixed Value QUICK_MSECURITY_PAY
+     * <p>
+     * 销售产品码，商家和支付宝签约的产品码,
+     * 为固定值 QUICK_MSECURITY_PAY
+     */
+    APP_PAY_PARAM_PRODUCT_CODE ("QUICK_MSECURITY_PAY"),
+    /**
+     * Product Code, The Product Code Signed By AliPay And Merchants.
+     * Please Fill In The Fixed Value Of The Product: QUICK_WAP_WAY
+     * <p>
+     * 销售产品码，商家和支付宝签约的产品码.
+     * 该产品请填写固定值：QUICK_WAP_WAY
+     */
+    WAP_PAY_PARAM_PRODUCT_CODE ("QUICK_WAP_WAY"),
+    /**
+     * Sell Product Code, Name Of Product Code Signed With AliPay.
+     * Note: Currently Only Supported:FAST_INSTANT_TRADE_PAY
+     * <p>
+     * 销售产品码，与支付宝签约的产品码名称.
+     * 注：目前仅支持FAST_INSTANT_TRADE_PAY
+     */
+    PAGE_PAT_PARAM_PRODUCT_CODE ("FAST_INSTANT_TRADE_PAY");
+    private String value;
 
-	PayParamConstant(String value) {
-		this.value = value;
-	}
+    PayParamConstant(String value) {
+        this.value = value;
+    }
 
-	public String getValue() {
-		return value;
-	}
+    public String getValue() {
+        return value;
+    }
 }

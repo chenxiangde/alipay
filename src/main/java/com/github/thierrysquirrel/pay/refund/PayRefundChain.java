@@ -32,40 +32,40 @@ import lombok.Data;
  */
 @Data
 public class PayRefundChain {
-	private AlipayClient alipayClient;
-	private AlipayTradeRefundModel alipayTradeRefundModel;
+    private AlipayClient alipayClient;
+    private AlipayTradeRefundModel alipayTradeRefundModel;
 
-	public PayRefundChain(AlipayClient alipayClient, AlipayTradeRefundModel alipayTradeRefundModel) {
-		this.alipayClient = alipayClient;
-		this.alipayTradeRefundModel = alipayTradeRefundModel;
-	}
+    public PayRefundChain(AlipayClient alipayClient, AlipayTradeRefundModel alipayTradeRefundModel) {
+        this.alipayClient = alipayClient;
+        this.alipayTradeRefundModel = alipayTradeRefundModel;
+    }
 
-	/**
-	 * Building Refund
-	 * <p>
-	 * 构建退款
-	 *
-	 * @return String
-	 * @throws AlipayApiException AlipayApiException
-	 */
-	public String refund() throws AlipayApiException {
-		AlipayTradeRefundRequest refundRequest = new AlipayTradeRefundRequest();
-		refundRequest.setBizModel(alipayTradeRefundModel);
-		return alipayClient.execute(refundRequest).getBody();
-	}
+    /**
+     * Building Refund
+     * <p>
+     * 构建退款
+     *
+     * @return String
+     * @throws AlipayApiException AlipayApiException
+     */
+    public String refund() throws AlipayApiException {
+        AlipayTradeRefundRequest refundRequest = new AlipayTradeRefundRequest ();
+        refundRequest.setBizModel (alipayTradeRefundModel);
+        return alipayClient.execute (refundRequest).getBody ();
+    }
 
-	/**
-	 * Custom Build RefundRequest
-	 * <p>
-	 * 自定义构建 RefundRequest
-	 *
-	 * @param refundRequest refundRequest
-	 * @return String
-	 * @throws AlipayApiException AlipayApiException
-	 */
-	public String refund(AlipayTradeRefundRequest refundRequest) throws AlipayApiException {
-		refundRequest.setBizModel(alipayTradeRefundModel);
-		return alipayClient.execute(refundRequest).getBody();
-	}
+    /**
+     * Custom Build RefundRequest
+     * <p>
+     * 自定义构建 RefundRequest
+     *
+     * @param refundRequest refundRequest
+     * @return String
+     * @throws AlipayApiException AlipayApiException
+     */
+    public String refund(AlipayTradeRefundRequest refundRequest) throws AlipayApiException {
+        refundRequest.setBizModel (alipayTradeRefundModel);
+        return alipayClient.execute (refundRequest).getBody ();
+    }
 
 }

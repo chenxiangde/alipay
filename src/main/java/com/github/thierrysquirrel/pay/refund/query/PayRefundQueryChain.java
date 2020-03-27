@@ -32,40 +32,40 @@ import lombok.Data;
  */
 @Data
 public class PayRefundQueryChain {
-	private AlipayClient alipayClient;
-	private AlipayTradeFastpayRefundQueryModel alipayTradeFastpayRefundQueryModel;
+    private AlipayClient alipayClient;
+    private AlipayTradeFastpayRefundQueryModel alipayTradeFastpayRefundQueryModel;
 
-	public PayRefundQueryChain(AlipayClient alipayClient, AlipayTradeFastpayRefundQueryModel alipayTradeFastpayRefundQueryModel) {
-		this.alipayClient = alipayClient;
-		this.alipayTradeFastpayRefundQueryModel = alipayTradeFastpayRefundQueryModel;
-	}
+    public PayRefundQueryChain(AlipayClient alipayClient, AlipayTradeFastpayRefundQueryModel alipayTradeFastpayRefundQueryModel) {
+        this.alipayClient = alipayClient;
+        this.alipayTradeFastpayRefundQueryModel = alipayTradeFastpayRefundQueryModel;
+    }
 
-	/**
-	 * Build Refund Query
-	 * <p>
-	 * 构建退款查询
-	 *
-	 * @return String
-	 * @throws AlipayApiException AlipayApiException
-	 */
-	public String refundQuery() throws AlipayApiException {
-		AlipayTradeFastpayRefundQueryRequest queryRequest = new AlipayTradeFastpayRefundQueryRequest();
-		queryRequest.setBizModel(alipayTradeFastpayRefundQueryModel);
-		return alipayClient.execute(queryRequest).getBody();
-	}
+    /**
+     * Build Refund Query
+     * <p>
+     * 构建退款查询
+     *
+     * @return String
+     * @throws AlipayApiException AlipayApiException
+     */
+    public String refundQuery() throws AlipayApiException {
+        AlipayTradeFastpayRefundQueryRequest queryRequest = new AlipayTradeFastpayRefundQueryRequest ();
+        queryRequest.setBizModel (alipayTradeFastpayRefundQueryModel);
+        return alipayClient.execute (queryRequest).getBody ();
+    }
 
-	/**
-	 * Custom Build QueryRequest
-	 * <p>
-	 * 自定义构建 QueryRequest
-	 *
-	 * @param queryRequest queryRequest
-	 * @return String
-	 * @throws AlipayApiException AlipayApiException
-	 */
-	public String refundQuery(AlipayTradeFastpayRefundQueryRequest queryRequest) throws AlipayApiException {
-		queryRequest.setBizModel(alipayTradeFastpayRefundQueryModel);
-		return alipayClient.execute(queryRequest).getBody();
-	}
+    /**
+     * Custom Build QueryRequest
+     * <p>
+     * 自定义构建 QueryRequest
+     *
+     * @param queryRequest queryRequest
+     * @return String
+     * @throws AlipayApiException AlipayApiException
+     */
+    public String refundQuery(AlipayTradeFastpayRefundQueryRequest queryRequest) throws AlipayApiException {
+        queryRequest.setBizModel (alipayTradeFastpayRefundQueryModel);
+        return alipayClient.execute (queryRequest).getBody ();
+    }
 
 }

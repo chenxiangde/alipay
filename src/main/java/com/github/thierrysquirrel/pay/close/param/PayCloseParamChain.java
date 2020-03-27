@@ -32,76 +32,76 @@ import lombok.Data;
  */
 @Data
 public class PayCloseParamChain {
-	private AlipayClient alipayClient;
-	private AlipayTradeCloseModel alipayTradeCloseModel;
+    private AlipayClient alipayClient;
+    private AlipayTradeCloseModel alipayTradeCloseModel;
 
-	public PayCloseParamChain(AlipayClient alipayClient, AlipayTradeCloseModel alipayTradeCloseModel) {
-		this.alipayClient = alipayClient;
-		this.alipayTradeCloseModel = alipayTradeCloseModel;
-	}
+    public PayCloseParamChain(AlipayClient alipayClient, AlipayTradeCloseModel alipayTradeCloseModel) {
+        this.alipayClient = alipayClient;
+        this.alipayTradeCloseModel = alipayTradeCloseModel;
+    }
 
-	/**
-	 * Builder PayCloseChain
-	 * <p>
-	 * 构建 PayCloseChain
-	 *
-	 * @return PayCloseChain
-	 */
-	public PayCloseChain builder() {
-		return new PayCloseChain(alipayClient, alipayTradeCloseModel);
-	}
+    /**
+     * Builder PayCloseChain
+     * <p>
+     * 构建 PayCloseChain
+     *
+     * @return PayCloseChain
+     */
+    public PayCloseChain builder() {
+        return new PayCloseChain (alipayClient, alipayTradeCloseModel);
+    }
 
-	/**
-	 * !!This Is An Indispensable Parameter
-	 * The Transaction In AliPay System Transaction Code.
-	 * The Shortest 16 Bits, The Longest 64 Bits.
-	 * And OutTradeNo Cannot Be Empty At The Same Time.
-	 * If OutTradeNo And TradeNo Are Passed At The Same Time,
-	 * TradeNo Shall Prevail.
-	 * <p>
-	 * !!这是不可缺参数
-	 * 该交易在支付宝系统中的交易流水号.最短 16 位,最长 64 位.
-	 * 和OutTradeNo不能同时为空,
-	 * 如果同时传了 OutTradeNo和 TradeNo,
-	 * 则以 TradeNo为准.
-	 *
-	 * @param tradeNo tradeNo
-	 * @return PayCloseParamChain
-	 */
-	public PayCloseParamChain builderTradeNo(String tradeNo) {
-		alipayTradeCloseModel.setTradeNo(tradeNo);
-		return this;
-	}
+    /**
+     * !!This Is An Indispensable Parameter
+     * The Transaction In AliPay System Transaction Code.
+     * The Shortest 16 Bits, The Longest 64 Bits.
+     * And OutTradeNo Cannot Be Empty At The Same Time.
+     * If OutTradeNo And TradeNo Are Passed At The Same Time,
+     * TradeNo Shall Prevail.
+     * <p>
+     * !!这是不可缺参数
+     * 该交易在支付宝系统中的交易流水号.最短 16 位,最长 64 位.
+     * 和OutTradeNo不能同时为空,
+     * 如果同时传了 OutTradeNo和 TradeNo,
+     * 则以 TradeNo为准.
+     *
+     * @param tradeNo tradeNo
+     * @return PayCloseParamChain
+     */
+    public PayCloseParamChain builderTradeNo(String tradeNo) {
+        alipayTradeCloseModel.setTradeNo (tradeNo);
+        return this;
+    }
 
-	/**
-	 * !!This Is An Indispensable Parameter
-	 * When The Order Is Paid, The Incoming Merchant Order Number And The AliPay Transaction Number Can Not Be Empty At The Same Time.
-	 * TradeNo, OutTradeNo If Both Exist, Take TradeNo First
-	 * <p>
-	 * !!这是不可缺参数
-	 * 订单支付时传入的商户订单号,和支付宝交易号不能同时为空.
-	 * TradeNo,OutTradeNo如果同时存在优先取TradeNo
-	 *
-	 * @param outTradeNo outTradeNo
-	 * @return PayCloseParamChain
-	 */
-	public PayCloseParamChain builderOutTradeNo(String outTradeNo) {
-		alipayTradeCloseModel.setOutTradeNo(outTradeNo);
-		return this;
-	}
+    /**
+     * !!This Is An Indispensable Parameter
+     * When The Order Is Paid, The Incoming Merchant Order Number And The AliPay Transaction Number Can Not Be Empty At The Same Time.
+     * TradeNo, OutTradeNo If Both Exist, Take TradeNo First
+     * <p>
+     * !!这是不可缺参数
+     * 订单支付时传入的商户订单号,和支付宝交易号不能同时为空.
+     * TradeNo,OutTradeNo如果同时存在优先取TradeNo
+     *
+     * @param outTradeNo outTradeNo
+     * @return PayCloseParamChain
+     */
+    public PayCloseParamChain builderOutTradeNo(String outTradeNo) {
+        alipayTradeCloseModel.setOutTradeNo (outTradeNo);
+        return this;
+    }
 
-	/**
-	 * Operator ID Customized By The Seller
-	 * <p>
-	 * 卖家端自定义的的操作员 ID
-	 *
-	 * @param operatorId operatorId
-	 * @return PayCloseParamChain
-	 */
-	public PayCloseParamChain builderOperatorId(String operatorId) {
-		alipayTradeCloseModel.setOperatorId(operatorId);
-		return this;
-	}
+    /**
+     * Operator ID Customized By The Seller
+     * <p>
+     * 卖家端自定义的的操作员 ID
+     *
+     * @param operatorId operatorId
+     * @return PayCloseParamChain
+     */
+    public PayCloseParamChain builderOperatorId(String operatorId) {
+        alipayTradeCloseModel.setOperatorId (operatorId);
+        return this;
+    }
 
 
 }

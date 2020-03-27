@@ -25,43 +25,43 @@ package com.github.thierrysquirrel.container;
  * @since JDK 1.8
  */
 public enum PayClientConstant {
-	/**
-	 * AliPay Online Environment Gateway
-	 *
-	 * AliPay线上环境网关
-	 */
-	PAY_GATEWAY("https://openapi.alipay.com/gateway.do"),
-	/**
-	 * AliPay Sandbox Environment Gateway
-	 *
-	 * AliPay沙箱环境网关
-	 */
-	DEV_PAY_GATEWAY("https://openapi.alipaydev.com/gateway.do"),
-	/**
-	 * Support ONLY JSON
-	 *
-	 * 仅支持JSON
-	 */
-	PAY_FORMAT("JSON"),
-	/**
-	 * Encoding Format Requested, Default UTF-8
-	 *
-	 * 请求使用的编码格式,默认UTF-8
-	 */
-	PAY_CHARSET("UTF-8"),
-	/**
-	 * Signature Algorithm, Default RSA2
-	 *
-	 * 签名算法,默认RSA2
-	 */
-	PAY_SIGN_TYPE("RSA2");
-	private String value;
+    /**
+     * AliPay Online Environment Gateway
+     * <p>
+     * AliPay线上环境网关
+     */
+    PAY_GATEWAY ("https://openapi.alipay.com/gateway.do"),
+    /**
+     * AliPay Sandbox Environment Gateway
+     * <p>
+     * AliPay沙箱环境网关
+     */
+    DEV_PAY_GATEWAY ("https://openapi.alipaydev.com/gateway.do"),
+    /**
+     * Support ONLY JSON
+     * <p>
+     * 仅支持JSON
+     */
+    PAY_FORMAT ("JSON"),
+    /**
+     * Encoding Format Requested, Default UTF-8
+     * <p>
+     * 请求使用的编码格式,默认UTF-8
+     */
+    PAY_CHARSET ("UTF-8"),
+    /**
+     * Signature Algorithm, Default RSA2
+     * <p>
+     * 签名算法,默认RSA2
+     */
+    PAY_SIGN_TYPE ("RSA2");
+    private String value;
 
-	PayClientConstant(String value) {
-		this.value = value;
-	}
+    PayClientConstant(String value) {
+        this.value = value;
+    }
 
-	public String getValue() {
-		return value;
-	}
+    public String getValue() {
+        return value;
+    }
 }

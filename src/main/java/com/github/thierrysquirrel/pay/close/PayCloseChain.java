@@ -32,38 +32,38 @@ import lombok.Data;
  */
 @Data
 public class PayCloseChain {
-	private AlipayClient alipayClient;
-	private AlipayTradeCloseModel alipayTradeCloseModel;
+    private AlipayClient alipayClient;
+    private AlipayTradeCloseModel alipayTradeCloseModel;
 
-	public PayCloseChain(AlipayClient alipayClient, AlipayTradeCloseModel alipayTradeCloseModel) {
-		this.alipayClient = alipayClient;
-		this.alipayTradeCloseModel = alipayTradeCloseModel;
-	}
+    public PayCloseChain(AlipayClient alipayClient, AlipayTradeCloseModel alipayTradeCloseModel) {
+        this.alipayClient = alipayClient;
+        this.alipayTradeCloseModel = alipayTradeCloseModel;
+    }
 
-	/**
-	 * Build Closing Transaction
-	 * <p>
-	 * 构建关闭交易
-	 *
-	 * @return String
-	 * @throws AlipayApiException AlipayApiException
-	 */
-	public String close() throws AlipayApiException {
-		AlipayTradeCloseRequest closeRequest = new AlipayTradeCloseRequest();
-		closeRequest.setBizModel(alipayTradeCloseModel);
-		return alipayClient.execute(closeRequest).getBody();
-	}
+    /**
+     * Build Closing Transaction
+     * <p>
+     * 构建关闭交易
+     *
+     * @return String
+     * @throws AlipayApiException AlipayApiException
+     */
+    public String close() throws AlipayApiException {
+        AlipayTradeCloseRequest closeRequest = new AlipayTradeCloseRequest ();
+        closeRequest.setBizModel (alipayTradeCloseModel);
+        return alipayClient.execute (closeRequest).getBody ();
+    }
 
-	/**
-	 * Custom Build CloseRequest
-	 * <p>
-	 * 自定义构建CloseRequest
-	 *
-	 * @param closeRequest closeRequest
-	 * @return String
-	 * @throws AlipayApiException AlipayApiException
-	 */
-	public String close(AlipayTradeCloseRequest closeRequest) throws AlipayApiException {
-		return alipayClient.execute(closeRequest).getBody();
-	}
+    /**
+     * Custom Build CloseRequest
+     * <p>
+     * 自定义构建CloseRequest
+     *
+     * @param closeRequest closeRequest
+     * @return String
+     * @throws AlipayApiException AlipayApiException
+     */
+    public String close(AlipayTradeCloseRequest closeRequest) throws AlipayApiException {
+        return alipayClient.execute (closeRequest).getBody ();
+    }
 }

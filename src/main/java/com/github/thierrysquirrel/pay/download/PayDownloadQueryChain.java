@@ -32,40 +32,40 @@ import lombok.Data;
  */
 @Data
 public class PayDownloadQueryChain {
-	private AlipayClient alipayClient;
-	private AlipayDataDataserviceBillDownloadurlQueryModel alipayDataDataserviceBillDownloadurlQueryModel;
+    private AlipayClient alipayClient;
+    private AlipayDataDataserviceBillDownloadurlQueryModel alipayDataDataserviceBillDownloadurlQueryModel;
 
-	public PayDownloadQueryChain(AlipayClient alipayClient, AlipayDataDataserviceBillDownloadurlQueryModel alipayDataDataserviceBillDownloadurlQueryModel) {
-		this.alipayClient = alipayClient;
-		this.alipayDataDataserviceBillDownloadurlQueryModel = alipayDataDataserviceBillDownloadurlQueryModel;
-	}
+    public PayDownloadQueryChain(AlipayClient alipayClient, AlipayDataDataserviceBillDownloadurlQueryModel alipayDataDataserviceBillDownloadurlQueryModel) {
+        this.alipayClient = alipayClient;
+        this.alipayDataDataserviceBillDownloadurlQueryModel = alipayDataDataserviceBillDownloadurlQueryModel;
+    }
 
-	/**
-	 * Build Query Bill Download
-	 * <p>
-	 * 构建查询账单下载
-	 *
-	 * @return String
-	 * @throws AlipayApiException AlipayApiException
-	 */
-	public String downloadQuery() throws AlipayApiException {
-		AlipayDataDataserviceBillDownloadurlQueryRequest queryRequest = new AlipayDataDataserviceBillDownloadurlQueryRequest();
-		queryRequest.setBizModel(alipayDataDataserviceBillDownloadurlQueryModel);
-		return alipayClient.execute(queryRequest).getBillDownloadUrl();
-	}
+    /**
+     * Build Query Bill Download
+     * <p>
+     * 构建查询账单下载
+     *
+     * @return String
+     * @throws AlipayApiException AlipayApiException
+     */
+    public String downloadQuery() throws AlipayApiException {
+        AlipayDataDataserviceBillDownloadurlQueryRequest queryRequest = new AlipayDataDataserviceBillDownloadurlQueryRequest ();
+        queryRequest.setBizModel (alipayDataDataserviceBillDownloadurlQueryModel);
+        return alipayClient.execute (queryRequest).getBillDownloadUrl ();
+    }
 
-	/**
-	 * Custom Build QueryRequest
-	 * <p>
-	 * 自定义构建 QueryRequest
-	 *
-	 * @param queryRequest queryRequest
-	 * @return String
-	 * @throws AlipayApiException AlipayApiException
-	 */
-	public String downloadQuery(AlipayDataDataserviceBillDownloadurlQueryRequest queryRequest) throws AlipayApiException {
-		queryRequest.setBizModel(alipayDataDataserviceBillDownloadurlQueryModel);
-		return alipayClient.execute(queryRequest).getBillDownloadUrl();
-	}
+    /**
+     * Custom Build QueryRequest
+     * <p>
+     * 自定义构建 QueryRequest
+     *
+     * @param queryRequest queryRequest
+     * @return String
+     * @throws AlipayApiException AlipayApiException
+     */
+    public String downloadQuery(AlipayDataDataserviceBillDownloadurlQueryRequest queryRequest) throws AlipayApiException {
+        queryRequest.setBizModel (alipayDataDataserviceBillDownloadurlQueryModel);
+        return alipayClient.execute (queryRequest).getBillDownloadUrl ();
+    }
 
 }

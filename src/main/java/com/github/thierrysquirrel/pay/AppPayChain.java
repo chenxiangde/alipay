@@ -32,41 +32,41 @@ import lombok.Data;
  */
 @Data
 public class AppPayChain {
-	private AlipayClient alipayClient;
-	private AlipayTradeAppPayModel alipayTradeAppPayModel;
+    private AlipayClient alipayClient;
+    private AlipayTradeAppPayModel alipayTradeAppPayModel;
 
-	public AppPayChain(AlipayClient alipayClient, AlipayTradeAppPayModel alipayTradeAppPayModel) {
-		this.alipayClient = alipayClient;
-		this.alipayTradeAppPayModel = alipayTradeAppPayModel;
-	}
+    public AppPayChain(AlipayClient alipayClient, AlipayTradeAppPayModel alipayTradeAppPayModel) {
+        this.alipayClient = alipayClient;
+        this.alipayTradeAppPayModel = alipayTradeAppPayModel;
+    }
 
-	/**
-	 * AliPay Server Initiatively Tells The Http/Https Path Specified In The Merchant Server.
-	 * <p>
-	 * 支付宝服务器主动通知商户服务器里指定的页面http/https路径
-	 *
-	 * @param notifyUrl notifyUrl
-	 * @return String
-	 * @throws AlipayApiException AlipayApiException
-	 */
-	public String pay(String notifyUrl) throws AlipayApiException {
-		AlipayTradeAppPayRequest payRequest = new AlipayTradeAppPayRequest();
-		payRequest.setNotifyUrl(notifyUrl);
-		payRequest.setBizModel(alipayTradeAppPayModel);
-		return alipayClient.sdkExecute(payRequest).getBody();
-	}
+    /**
+     * AliPay Server Initiatively Tells The Http/Https Path Specified In The Merchant Server.
+     * <p>
+     * 支付宝服务器主动通知商户服务器里指定的页面http/https路径
+     *
+     * @param notifyUrl notifyUrl
+     * @return String
+     * @throws AlipayApiException AlipayApiException
+     */
+    public String pay(String notifyUrl) throws AlipayApiException {
+        AlipayTradeAppPayRequest payRequest = new AlipayTradeAppPayRequest ();
+        payRequest.setNotifyUrl (notifyUrl);
+        payRequest.setBizModel (alipayTradeAppPayModel);
+        return alipayClient.sdkExecute (payRequest).getBody ();
+    }
 
-	/**
-	 * Custom Build PayRequest
-	 * <p>
-	 * 自定义构建PayRequest
-	 *
-	 * @param payRequest payRequest
-	 * @return String
-	 * @throws AlipayApiException AlipayApiException
-	 */
-	public String pay(AlipayTradeAppPayRequest payRequest) throws AlipayApiException {
-		payRequest.setBizModel(alipayTradeAppPayModel);
-		return alipayClient.sdkExecute(payRequest).getBody();
-	}
+    /**
+     * Custom Build PayRequest
+     * <p>
+     * 自定义构建PayRequest
+     *
+     * @param payRequest payRequest
+     * @return String
+     * @throws AlipayApiException AlipayApiException
+     */
+    public String pay(AlipayTradeAppPayRequest payRequest) throws AlipayApiException {
+        payRequest.setBizModel (alipayTradeAppPayModel);
+        return alipayClient.sdkExecute (payRequest).getBody ();
+    }
 }

@@ -25,21 +25,21 @@ package com.github.thierrysquirrel.container;
  * @since JDK 1.8
  */
 public final class PayCheckFactoryContainer {
-	/**
-	 * MAP_DEFAULT_SIZE
-	 * <p>
-	 * 默认Map大小
-	 */
-	public static final int MAP_DEFAULT_SIZE = 16;
-	/**
-	 * Reload Join
-	 * <p>
-	 * 重置拼接符
-	 */
-	public static final String RELOAD_JOIN = ",";
+    /**
+     * MAP_DEFAULT_SIZE
+     * <p>
+     * 默认Map大小
+     */
+    public static final int MAP_DEFAULT_SIZE = 16;
+    /**
+     * Reload Join
+     * <p>
+     * 重置拼接符
+     */
+    public static final String RELOAD_JOIN = ",";
 
-	private PayCheckFactoryContainer() {
-	}
+    private PayCheckFactoryContainer() {
+    }
 
 
 }
